@@ -1,0 +1,23 @@
+Data Format Validation
+Now we will see how we can validate our entered form data before submitting it to the web server.
+
+The following example shows how to validate an entered email address. An email address must contain at least a ‘@’ sign and a dot (.). Also, the ‘@’ must not be the first character of the email address, and the last dot must at least be one character after the ‘@’ sign.
+
+Example
+Try the following code for email validation.
+
+<script type = "text/javascript">
+   <!--
+      function validateEmail() {
+         var emailID = document.myForm.EMail.value;
+         atpos = emailID.indexOf("@");
+         dotpos = emailID.lastIndexOf(".");
+         
+         if (atpos < 1 || ( dotpos - atpos < 2 )) {
+            alert("Please enter correct email ID")
+            document.myForm.EMail.focus() ;
+            return false;
+         }
+         return( true );
+      }
+   //-->
